@@ -3,6 +3,8 @@ CLI for dumping Elasticsearch DB for later bulk import
 * get all indexes to be in a list 
 * select
 * dump
+* send it as email 
+
 ```bash
 
 #!/bin/bash
