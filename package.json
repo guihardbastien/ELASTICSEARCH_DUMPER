@@ -1,0 +1,87 @@
+{
+	"name": "elasticsearch-dumper",
+	"version": "1.0.0",
+	"description": "elastic search data dumper for later bulk imports",
+	"keywords": [],
+	"author": "guihardbastien",
+	"license": "MIT",
+	"main": "dist/lib/index.js",
+	"module": "dist/lib/index.js",
+	"types": "dist/types/index.d.ts",
+	"engines": {
+		"node": ">=8.9.0"
+	},
+	"scripts": {
+		"prebuild": "npx rimraf dist",
+		"build": "npx tsc --module commonjs",
+		"build:watch": "npx tsc -w --module commonjs",
+		"dev:watch": "npx tsc-watch --module commonjs --onSuccess 'npm run dev'",
+		"dev": "node --harmony ./dist/lib/index.js",
+		"test": "npx jest --coverage",
+		"test:watch": "npx jest --coverage --watch",
+		"test:prod": "npm run lint && npm run test -- --no-cache",
+		"lint": "npx tslint --project tsconfig.json -t codeFrame 'lib/**/*.ts' 'test/**/*.ts'",
+		"docs": "npx typedoc --out docs --target es6 --theme minimal --mode file lib"
+	},
+	"dependencies": {
+		"@types/clear": "^0.1.0",
+		"@types/figlet": "^1.2.0",
+		"@types/inquirer": "^6.5.0",
+		"@types/mkdirp": "^1.0.0",
+		"@types/node": "^11.15.7",
+		"chalk": "^3.0.0",
+		"clear": "^0.1.0",
+		"figlet": "^1.3.0",
+		"fs": "0.0.1-security",
+		"inquirer": "^7.1.0",
+		"mkdirp": "^1.0.3",
+		"thicker_cli": "^1.0.0"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.2.9",
+		"@types/jest": "23.x",
+		"@types/sinon": "^7.5.1",
+		"chai": "4.x",
+		"gitlab-npm-audit-parser": "^1.0.3",
+		"jest": "^25",
+		"jest-config": "^25",
+		"lodash.camelcase": "^4.3.0",
+		"rimraf": "^2.7.1",
+		"sinon": "^7.5.0",
+		"ts-jest": "^25.4.0",
+		"ts-node": "7.x",
+		"tsc-watch": "1.x",
+		"tslint": "^5.20.1",
+		"tslint-config-airbnb": "^5.11.2",
+		"tslint-language-service": "^0.9.9",
+		"typedoc": "^0.15.8",
+		"typescript": "^3.7.5"
+	},
+	"jest": {
+		"transform": {
+			".(ts|tsx)": "ts-jest"
+		},
+		"testEnvironment": "node",
+		"testRegex": "(/tests/.*|\\.(test|spec|func))\\.(ts|tsx|js)$",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"coveragePathIgnorePatterns": [
+			"/node_modules/",
+			"/tests/"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 85,
+				"functions": 85,
+				"lines": 85,
+				"statements": 85
+			}
+		},
+		"collectCoverageFrom": [
+			"lib/**/*.{js,ts}"
+		]
+	}
+}
