@@ -36,11 +36,7 @@ npm install -g
 
 ### How to use ?
 
-```bash
-cd <dir_name>
-nodor
-# should prompt you with options
-```
+TBA
 
 ## NPM custom commands
 
