@@ -43,6 +43,15 @@ Just type the following command while having your DB up and running:
 ```bash
 esdump
 ```
+*expected output*: 
+```json
+{"index":{"_index":"group","_type":"_doc","_id":"group1"}}
+{"description":"group 1 description","organizationId":["org1"],"name":"administration"}
+{"index":{"_index":"group","_type":"_doc","_id":"group2"}}
+{"description":"group 2 description","organizationId":["org1"],"name":"developpement"}
+{"index":{"_index":"group","_type":"_doc","_id":"group3"}}
+{"description":"group 3 description","organizationId":["org1"],"name":"common"}
+```
 
 ## NPM custom commands
 
