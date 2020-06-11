@@ -42,6 +42,8 @@ Just type the following command while having your DB up and running:
 
 ```bash
 esdump
+# then select the indexes you'd like to dump
+# /!\ For now it only scans default port 9200, custom ports TBA
 ```
 *expected output*: 
 ```json
